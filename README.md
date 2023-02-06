@@ -81,3 +81,9 @@ for(int i = 1; i <= 20; i++) {
 
 //This is not final, changes will probably need to occur when actually writing the code.
 ```
+
+## Output
+<p align='center'>
+	<img src="https://imgur.com/IkO7cx5.png"><br/>
+	The output in the terminal after running the application.
+</p>
