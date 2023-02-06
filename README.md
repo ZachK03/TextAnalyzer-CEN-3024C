@@ -1,4 +1,5 @@
 
+  
 # TextAnalyzer-CEN-3024C
 
 Text analyzer that will take a file and output statistics on frequency of words.
@@ -55,4 +56,28 @@ for (Element p : paragraphs) {
 };
 
 //Now we have the map with data, we just need to sort it.
+//Copy to ArrayList
+ArrayList<List<String>> list = new ArrayList<>();
+for(Map.Entry<String, String> entry : map.entrySet()) {
+	String word = entry.getKey();
+	String count = entry.getValue();
+	List<String> tempList = new ArrayList<String>();
+	tempList.add(word); tempList.add(count);
+	list.add(tempList);
+}
+
+//Use Collections.sort() to sort the ArrayList
+Collections.sort(list, new Comparator<List<String>>() {
+	@Override
+	public int compare(List<String> o1, List<String> o2) {
+		return o2.get(1).compareTo(o1.get(1));
+	}
+});
+
+//Output top 20 words
+for(int i = 1; i <= 20; i++) {
+	System.out.println( "Word " + i + ": Word '" + list.get(i-1).get(0) + "' Count " + list.get(i-1).get(1) );
+}
+
+//This is not final, changes will probably need to occur when actually writing the code.
 ```
